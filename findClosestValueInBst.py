@@ -5,8 +5,6 @@ class BST:
         self.right = None
 
 
-
-
 def create_bst():
     root = BST(10)
     root.left = BST(5)
@@ -21,26 +19,24 @@ def create_bst():
 
 
 # o(log(n)) both space and time on avg
-def findClosestValueInBst(tree,target):
+def findClosestValueInBst(tree, target):
 
-    return findClosestValueInBstHelper(tree,target,float("inf"))
+    return findClosestValueInBstHelper(tree, target, float("inf"))
 
-    
-    
-def findClosestValueInBstHelper(tree,target,closest):
+
+def findClosestValueInBstHelper(tree, target, closest):
     if tree is None:
         return closest
-    if abs(target-closest)>abs(target-tree.value):
-        closest=tree.value
-    if tree.value>target:
+    if abs(target-closest) > abs(target-tree.value):
+        closest = tree.value
+    if tree.value > target:
         return findClosestValueInBstHelper(tree.left, target, closest)
-    if tree.value<target:
+    if tree.value < target:
         return findClosestValueInBstHelper(tree.right, target, closest)
-    else: return closest
-    
-    
-    
-tree = create_bst()
-target = 12    
-closest_value=findClosestValueInBst(tree, target)
+    else:
+        return closest
 
+
+tree = create_bst()
+target = 12
+closest_value = findClosestValueInBst(tree, target)

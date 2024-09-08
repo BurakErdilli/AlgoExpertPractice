@@ -1,4 +1,4 @@
-#o(2**n) time, o(n) space
+# o(2**n) time, o(n) space
 
 def fib(n):
 
@@ -9,25 +9,14 @@ def fib(n):
     else:
 
         return (fib(n-1)+fib(n-2))
-    
-    
 
 
-
-def fibHash(n,mem={1:0,2:1}):
+def fibHash(n, mem={1: 0, 2: 1}):
     if n in mem:
         return mem[n]
     else:
-        mem[n]=fibHash(n-1,mem)+fibHash(n-2,mem)
+        mem[n] = fibHash(n-1, mem)+fibHash(n-2, mem)
         return mem[n]
 
 
-
-a=fibHash(2000)
-
-
-
-
-
-
-
+a = fibHash(2000)

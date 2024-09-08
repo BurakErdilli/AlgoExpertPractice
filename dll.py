@@ -4,6 +4,7 @@ class Node:
         self.prev = None
         self.next = None
 
+
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -134,8 +135,9 @@ dll.insertAfter(nodes[5], nodes[6])  # Insert node 7 after node 6
 dll.insertAfter(nodes[6], nodes[7])  # Insert node 8 after node 7
 dll.insertAfter(nodes[7], nodes[8])  # Insert node 9 after node 8
 dll.insertAfter(nodes[8], nodes[9])  # Insert node 10 after node 9
-dll.insertAfter(nodes[9], nodes[10]) # Insert node 11 after node 10
-dll.printList()                      # Should print: [1, 3, 4, 2, 5, 6, 7, 8, 9, 10, 11, 12]
+dll.insertAfter(nodes[9], nodes[10])  # Insert node 11 after node 10
+# Should print: [1, 3, 4, 2, 5, 6, 7, 8, 9, 10, 11, 12]
+dll.printList()
 
 # Test remove
 dll.remove(nodes[4])  # Remove node 5
