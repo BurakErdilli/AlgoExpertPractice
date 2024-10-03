@@ -11,7 +11,7 @@ def fibHash(n, mem={1: 0, 2: 1}):
 
 
 # Call the function and store both the Fibonacci value and the memoization map
-fib_value, memo_map = fibHash(200)
+fib_value, memo_map = fibHash(1000)
 
 # Convert memo_map into a list of values for plotting
 fib_indices = list(memo_map.keys())
@@ -42,7 +42,7 @@ plt.title("Slope of Fibonacci Values (Rate of Change)", fontsize=16)
 plt.xlabel("n (Index)", fontsize=12)
 plt.ylabel("Slope (Δ Fibonacci Value)", fontsize=12)
 plt.grid(True)
-
+print(fib_value)
 # Adjust layout and show the plot
 plt.tight_layout()
 plt.show()
