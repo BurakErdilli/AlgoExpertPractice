@@ -1,14 +1,30 @@
-def isPalindrome(string, i=0):
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
 
-    if i >= len(string)-i-1:
+        # Convert string to lowercase
+        s = s.lower()
+
+        # Remove non-alphanumeric characters (and spaces)
+        result = []
+        for char in s:
+            if char.isalnum():  # Check if the character is alphanumeric
+                result.append(char)
+
+        # Join the result to form a new string
+        processed_string = ''.join(result)
+
+        i = 0
+        j = len(processed_string)-1
+
+        while i < len(processed_string)/2:
+            if processed_string[i] != processed_string[j]:
+                return False
+            i += 1
+            j -= 1
         return True
 
-    if string[i] == string[len(string)-i-1]:
-        return isPalindrome(string, i+1)
 
-    return False
-
-
-string = "/: traşnedenşart :/"
-
-a = isPalindrome(string)
+obj = Solution()
+s = "A man, a plan, a canal: Panama"
+result = obj.isPalindrome(s)
+print(result)
